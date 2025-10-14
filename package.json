@@ -8,7 +8,7 @@
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "typegen": "openapi-typescript https://nycu-sdc.github.io/core-system-api/tsp-output/schema/openapi.1.0.0.yaml --output src/lib/api-types.ts --useOptions"
+        "typegen": "openapi-typescript https://nycu-sdc.github.io/core-system-api/tsp-output/schema/openapi.1.0.0.yaml --output src/generated/openapi-types.ts --useOptions"
     },
     "dependencies": {
         "react": "^19.1.1",
