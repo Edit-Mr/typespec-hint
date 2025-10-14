@@ -1,21 +1,27 @@
 import { api } from "./lib/api";
 
-function App() {
+async function App() {
     // ✅ Full IntelliSense for the body shape
-    const res = await api.post("/users", {
-        name: "Alice",
-        email: "alice@example.com",
+    const res = await api.post("/api/orgs", {
+        name: "NYCU SDC2",
+        description: "陽明交大軟體開發社",
+        slug: "nycu-sdc1",
+        metadata: {},
     });
     //    ^? typed as the success response for POST /users
 
     // ❌ If you send wrong/missing fields, TS errors immediately:
-    await api.post("/users", {
-        name: "OnlyName", // TS error: 'email' is missing
-        extraneous: "not-allowed", // TS error: object literal may only specify known properties
+    await api.post("/api/orgs", {
+        name: "NYCU SDC2",
+        description: "陽明交大軟體開發社",
+        slug: "nycu-sdc1",
+        metadata: {
+            type: "club",
+        },
     });
 
     // ❌ If you try to POST to a path that has no POST in your OpenAPI:
-    await api.post("/users/{id}", {
+    await api.post("/users", {
         /* ... */
     }); // TS error if POST not defined for that path
 
