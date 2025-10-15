@@ -1,4 +1,3 @@
-// src/lib/api-types.ts
 import type { paths } from "../generated/openapi-types";
 
 // All literal paths in your OpenAPI (like "/users", "/users/{id}", ...)
